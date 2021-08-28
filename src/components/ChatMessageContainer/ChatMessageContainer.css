@@ -1,0 +1,17 @@
+
+.messages {
+  position: relative;
+  list-style: none;
+  padding: 20px 10px 0 10px;
+  margin: 0;
+  height: 347px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+@media screen and (max-width: 600px) {
+  .messages{
+    height: 75vh;
+  }
+}
