@@ -2,14 +2,14 @@ export const onGraphQLError = ( response: any ) => {
     console.error(`[GraphQL error]: Message: ${response.message}`)
 }
 
-export const getStorageItem = <T>( key: string = '', defaultValue: any = null, store: any = localStorage ): T => {
+export const getStorageItem = <T>( key: string = "", defaultValue: any = null, store: any = localStorage ): T => {
 	try {
 		if( store.getItem(key) ) {
 			const _defaultValue = JSON.parse(atob(store.getItem(key)))
 			if( _defaultValue !== null ) defaultValue = _defaultValue
 		}
 	} catch (e) {
-		console.error(key,'error',e)
+		console.error(key,"error",e)
 		clearStorageItem(key)
 	}
 	return defaultValue

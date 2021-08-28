@@ -4,5 +4,5 @@ export interface ChatHeaderPropTypes {
 }
 
 export const ChatHeaderPropTypesDefault: ChatHeaderPropTypes = {
-    title: 'Chat'
+    title: "Chat"
 }

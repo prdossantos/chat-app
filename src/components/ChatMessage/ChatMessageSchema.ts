@@ -6,5 +6,5 @@ export interface ChatMessagePropTypes {
 }
 
 export const ChatMessagePropTypesDefault: ChatMessagePropTypes = {
-    align: 'left'
+    align: "left"
 }
