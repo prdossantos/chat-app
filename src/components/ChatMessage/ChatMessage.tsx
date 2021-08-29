@@ -16,4 +16,4 @@ const ChatMessage = ( {message, align}: ChatMessagePropTypes ) => {
 
 export default ChatMessage;
 
-ChatMessage.defaultProps = ChatMessagePropTypesDefault
+ChatMessage.defaultProps = ChatMessagePropTypesDefault;

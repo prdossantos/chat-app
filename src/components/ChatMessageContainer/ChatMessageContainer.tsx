@@ -5,10 +5,10 @@ import ChatMessage from "../ChatMessage/ChatMessage";
 import { useEffect } from "react";
 
 const ChatMessageContainer = ( {messages}: ChatMessageContainerPropTypes ) => {
-    let containerRef: any = useRef(null)
+    let containerRef: any = useRef(null);
 
     useEffect(() => {
-        containerRef.current.scrollIntoView({ behavior: "smooth" })
+        containerRef.current.scrollIntoView({ behavior: "smooth" });
     }, [messages.length])
 
     return (
@@ -23,4 +23,4 @@ const ChatMessageContainer = ( {messages}: ChatMessageContainerPropTypes ) => {
 
 export default ChatMessageContainer;
 
-ChatMessageContainer.defaultProps = ChatMessageContainerPropTypesDefault
+ChatMessageContainer.defaultProps = ChatMessageContainerPropTypesDefault;

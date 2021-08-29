@@ -16,35 +16,36 @@ const App = () => {
 	const [messages, setMessages] = useState<Message[]>([]);
 	const [logged, setLogged] = useState<User>();
 	const [isLogged, setIsLogged] = useState(false);
-	const onSignIn = ( user: User ) => setLogged(user)
+	const onSignIn = ( user: User ) => setLogged(user);
 	const onMessageAdded = ( message: Message ) => {
 		const _messages: Message[] = [...messages];
-		_messages.push(message)
-		setMessages(_messages)
+		_messages.push(message);
+		setMessages(_messages);
+	}
 
-	}
 	const onLogout = () =>{ 
-		setIsLogged(false)
+		setIsLogged(false);
 	}
+
     const { data } = useQuery( GET_MESSAGES, {onError: onGraphQLError, pollInterval: 1000});
 
 	useEffect(() => {
 		const user: User = getStorageItem("_user");
 		if( user ) {
-			setLogged(user)
+			setLogged(user);
 		}
 	}, [])
 
 	useEffect( () => {
 		if( logged?._id ) {
-			setStorageItem("_user", logged)
-			setIsLogged(true)
+			setStorageItem("_user", logged);
+			setIsLogged(true);
 		}
 	}, [logged])
 
 	useEffect(() => {
 		if( data && data.messages ) {
-			setMessages(data.messages)
+			setMessages(data.messages);
 		}
 	}, [data])
 

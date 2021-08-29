@@ -1,4 +1,3 @@
-
 .messages {
   position: relative;
   list-style: none;
@@ -9,9 +8,8 @@
   overflow-y: auto;
 }
 
-
 @media screen and (max-width: 600px) {
-  .messages{
+  .messages {
     height: 75vh;
   }
 }

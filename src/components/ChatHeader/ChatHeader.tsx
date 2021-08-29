@@ -7,7 +7,7 @@ const ChatHeader = ( {title, onLogout}: ChatHeaderPropTypes ) => {
     
     const logout = () => {
         clearStorage();
-        onLogout()
+        onLogout();
     } 
 
     return (
@@ -27,4 +27,4 @@ const ChatHeader = ( {title, onLogout}: ChatHeaderPropTypes ) => {
 
 export default ChatHeader;
 
-ChatHeader.defaultProps = ChatHeaderPropTypesDefault
+ChatHeader.defaultProps = ChatHeaderPropTypesDefault;

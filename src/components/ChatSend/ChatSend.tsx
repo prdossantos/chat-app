@@ -12,44 +12,47 @@ const ChatSend = ( {inputPlaceholder, buttonText, onSignIn, onMessageAdded, isLo
     let input: any;
     const [send, { data, loading, error }] = useMutation( isLogged ? CREATE_MESSAGE : SIGN_IN, {onError: onGraphQLError});
 
-    if( loading ) { buttonText = 'loading...'; }
-    else { buttonText = 'Enviar'}
+    if( loading ) { 
+        buttonText = "loading..."; 
+    } else { 
+        buttonText = "Enviar"
+    }
 
     if( error ) {
-        alert(error.message)
+        alert(error.message);
     }
 
     const onSubmit = () => {
         const {value} = input;
-        let variables = {}
+        let variables = {};
 
         if( !value.trim() ) {
-            alert(`Insira ${isLogged ? `sua mensagem` : `seu nome`} ;)`)
+            alert(`Insira ${isLogged ? `sua mensagem` : `seu nome`} ;)`);
             return;
         }
         
         if( isLogged ) {
-            variables = { createMessageMessage: value.trim(), createMessageUserId: user?._id }
+            variables = { createMessageMessage: value.trim(), createMessageUserId: user?._id };
         } else {
-            variables = { signInName: value.trim() }
+            variables = { signInName: value.trim() };
         }
 
-        send({variables})
+        send({variables});
     }
 
     useEffect(() => {
         if( data ) {
-            const { signIn, createMessage } = data
+            const { signIn, createMessage } = data;
             if( signIn && signIn._id ) {
-                localStorage.setItem('_user', signIn)
-                input.value = ''
-                input.focus()
-                onSignIn(signIn)
+                localStorage.setItem("_user", signIn);
+                input.value = "";
+                input.focus();
+                onSignIn(signIn);
             }
             if( createMessage && createMessage._id ) {
-                onMessageAdded(createMessage)
-                input.value = ''
-                input.focus()
+                onMessageAdded(createMessage);
+                input.value = "";
+                input.focus();
             }
         }
 
@@ -74,4 +77,4 @@ const ChatSend = ( {inputPlaceholder, buttonText, onSignIn, onMessageAdded, isLo
 
 export default ChatSend;
 
-ChatSend.defaultProps = ChatSendPropTypesDefault
+ChatSend.defaultProps = ChatSendPropTypesDefault;

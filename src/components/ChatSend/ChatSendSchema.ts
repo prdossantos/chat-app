@@ -7,10 +7,10 @@ export interface ChatSendPropTypes {
     onMessageAdded?: any,
     isLogged: boolean,
     user?: User
-}
+};
 
 export const ChatSendPropTypesDefault: ChatSendPropTypes = {
-    inputPlaceholder: 'Type your message here...',
-    buttonText: 'Send',
+    inputPlaceholder: "Type your message here...",
+    buttonText: "Send",
     isLogged: false
-}
+};
